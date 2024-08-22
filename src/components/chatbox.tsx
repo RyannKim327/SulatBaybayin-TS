@@ -19,28 +19,35 @@ const Chat = (props: any) => {
 
 const Room = (props: any) => {
   return (
-    <div>
+    <div
+      className={`h-full w-full box-border overflow-y-scroll ${props.className}`}
+    >
       <Chat you={true} msg="Hello" sender="Hehe" />
       <Chat msg="Test" className="sender" />
       <Chat msg="Hello World" sender="Santol" />
+      <Chat msg="Test Message" sender="Sample" />
+      <Chat you={true} msg="Hello" sender="Test" />
+      <Chat msg="HAHAHA" sender="Santol" />
     </div>
   );
 };
 
 const ChatBox = (props: any) => {
   const [inputValue, setInputValue] = useState("");
-
+  const [canSend, setSend] = useState(false);
   function send() {
     console.log(inputValue);
   }
 
   function handleKeyUp(event: any) {
     setInputValue(event.target.value);
+    setSend(event.target.value.trim().length > 1);
   }
 
   return (
     <div className={`${props.className} flex flex-col`}>
-      <div className="flex flex-col h-full box-border">
+      <div className="flex flex-col h-full w-full box-border">
+        <h3 className="text-center">Chatbox</h3>
         {/* TODO: To create a Chatroom for general */}
         <Room />
       </div>
@@ -57,7 +64,7 @@ const ChatBox = (props: any) => {
           onClick={() => {
             send();
           }}
-          className="p-4 text-green-700"
+          className={`p-4 text-green-700 ${canSend ? "" : "hidden"}`}
         >
           <FontAwesomeIcon icon={faPaperPlane} />
         </button>
