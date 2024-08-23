@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import language from "../data/language";
 
 const Li = (props: any) => {
   return (
@@ -16,15 +17,13 @@ const Li = (props: any) => {
 const TopSide = (props: any) => {
   return (
     <div className={`${props.className}`}>
-      <h1 className="text-sm md:text-lg text-center" id="title">
-        Home
-      </h1>
+      <h1 className="text-sm md:text-lg text-center" id="main-title"></h1>
       <ul className="w-full box-border">
-        <Li to="/" value="Home" />
-        <Li to="/about" value="About us" />
-        <Li to="/download" value="Download" />
-        <Li to="/faqs" value="FAQ's" />
-        <Li to="/feedbacks" value="Feedback" />
+        <Li to="/" value={language("home")} />
+        <Li to="/about" value={language("about")} />
+        <Li to="/download" value={language("download")} />
+        <Li to="/faqs" value={language("faqs")} />
+        <Li to="/feedback" value={language("feedback")} />
       </ul>
     </div>
   );

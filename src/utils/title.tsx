@@ -1,11 +1,14 @@
 import { useEffect } from "react";
+import language from "../data/language";
 
-const SetTitle = (title: string, id: string) => {
+const SetTitle = (title: string) => {
   useEffect(() => {
-    const mytitle = document.getElementById(id);
+    const mytitle = document.getElementById("main-title");
     if (mytitle) {
-      mytitle.textContent = title;
+      mytitle.textContent = language(title);
     }
-    document.title = title;
+    document.title = language(title);
   }, [title]);
 };
+
+export default SetTitle
