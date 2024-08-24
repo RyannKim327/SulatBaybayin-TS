@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./header";
-import Index from "./../pages/index"
+import Index from "./../pages/index";
 import About from "../pages/about";
 import Download from "../pages/download";
 import FAQ from "../pages/faq";

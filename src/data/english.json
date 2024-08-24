@@ -5,5 +5,10 @@
   "download": "Download app",
   "faqs": "FaQ's",
   "feedback": "Feedbacks",
-  "chatbox": "Global Chatbox"
+  "chatbox": "Global Chatbox",
+  "what_is_baybayin": "What is Baybayin",
+  "answer_baybayin": "Baybayin is Pre-Spanish Script used by the Filipinos, particularly in Luzon or Southern Luzon Regions. It originally 17 characters with no Virama or to inherit vowels. Once the spanish came in the Philippines, they added the virama, that turns from B17 to B17+. Further more, Baybayin was belong to the family of Brahmic Family, also known Indic script, which is a family of abugida writting systems. It was false that Baybayin was also known as Alibata (Alif Ba Ta)",
+
+  "welcome": "Welcome to",
+  "title_home": "Sulat Baybayin [Reborn]"
 }
