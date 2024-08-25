@@ -12,7 +12,7 @@ const Chat = (props: any) => {
         {props.sender ?? language("anonymous_user")}
       </span>
       <span
-        className={`text-sm md: text-base rounded-full text-white px-2 py-[0.15rem] ${props.you ? "mr-2 bg-green-400" : "ml-2 bg-slate-300 text-green-700"}`}
+        className={`text-sm md: text-base rounded-full text-white px-2 py-[0.15rem] ${props.you ? "mr-2 bg-green-400 dark:bg-transparent dark:shadow dark:text-green-300 dark:shadow-green-300 dark:hover:shadow-lime-900" : "ml-2 bg-slate-300 text-green-700 dark:shadow dark:shadow-lime-400 dark:bg-transparent"}`}
       >
         {props.msg}
       </span>
