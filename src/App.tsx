@@ -1,34 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Bottom from "./components/bottom";
+import Footer from "./components/footer";
+import Right from "./components/right";
+import Top from "./components/top";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <div className="">
-      <div className="">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="app h-dvh w-dvw">
+      <Top className="top h-full w-full box-border" />
+      <Right className="right h-full w-full box-border" />
+      <Bottom className="bottom h-full w-full box-border" />
+      <Footer className="footer w-full" />
     </div>
   );
-}
+};
 
 export default App;
