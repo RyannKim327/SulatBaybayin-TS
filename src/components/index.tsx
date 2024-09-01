@@ -1,13 +1,15 @@
-import LeftSide from "../parts/left-side";
+import BottomSide from "../parts/bottom-side";
 import RightSide from "../parts/right-side";
+import TopSide from "../parts/top-side";
+import Footer from "./footer";
 
 const Index = (props: any) => {
   return (
-    <div
-      className={`${props.className} flex bg-[#faf5ff] dark:bg-slate-900 dark:text-white`}
-    >
-      <LeftSide className="w-3/12 h-full box-border bg-transparent p-2" />
-      <RightSide className="w-9/12 h-full box-border rounded-md p-2 border-2 border-solid border-green-900 bg-transparent" />
+    <div className={`${props.className} w-full h-full box-border main-base`}>
+      <TopSide className="top h-full w-full" />
+      <BottomSide className="bottom h-full w-full" />
+      <RightSide className="right w-full rounded-md p-2 bg-transparent" />
+      <Footer className="footer flex w-full h-full box-border justify-center" />
     </div>
   );
 };

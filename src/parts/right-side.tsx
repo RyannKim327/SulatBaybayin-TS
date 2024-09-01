@@ -9,7 +9,7 @@ import Feedbacks from "../pages/feedback";
 const RightSide = (props: any) => {
   return (
     <div className={`${props.className}`}>
-      <Header className="flex flex-row w-full box-border bg-slate-300 justify-between" />
+      <Header className="flex flex-row w-full box-border justify-between" />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />

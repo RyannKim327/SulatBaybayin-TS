@@ -5,7 +5,7 @@ const Li = (props: any) => {
   return (
     <div>
       <Link
-        className={`${props.className} block text-sm md:text-lg my-px rounded-md px-2 bg-gradient-to-b text-green-900 dark:text-green-300 from-transparent to-green-100 dark:to-green-700 hover:from-green-100 hover:to-green-300 dark:hover:text-green-100 dark:hover:from-transparent dark:hover:to-transparent transition transition-75 ease-in`}
+        className={`${props.className} block text-sm md:text-lg my-px rounded-md px-2 transition transition-75 ease-in`}
         to={props.to}
       >
         {props.value}

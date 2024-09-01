@@ -9,3 +9,33 @@
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+
+.main-base {
+  display: grid;
+  grid-template-areas:
+    "top right"
+    "bottom right"
+    "footer footer";
+  grid-template-rows: 2fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr;
+
+  > .right {
+    grid-area: right;
+  }
+
+  > .top {
+    grid-area: top;
+  }
+
+  > .bottom {
+    grid-area: bottom;
+  }
+
+  > .footer {
+    grid-area: footer;
+  }
+
+  > * {
+    border: 1px red solid;
+  }
+}
