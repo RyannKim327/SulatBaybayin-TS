@@ -22,7 +22,7 @@
 2. Navigate to your project (`my-app`) using cd and run `npm install`
 3. Other packages such as TailwindCSS are not installed, if you want, you may install it using `npm install tailwindcss postcss autoprefixer` those three packages are important too
 4. In addition with the 3rd step, you also need to install the fortawesome packages if you want to use the fontawesome icons, just install the react-fontawesome and the related icons such as free-solid-svg-icons and/or free-brands-svg-icons for brand icons
-5. Take note: `react-fontawesome` is not included in the installation of reactjs, you need to install it manually
+5. Take note: `react-router-dom` is not included in the installation of reactjs, you need to install it manually
 
 ---
 ### Start tailwind
