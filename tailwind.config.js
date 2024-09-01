@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{tsx, jsx, js, ts}"],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      boxShadow: {
-        mpop: "3px 3px 8px transparent,-1px -1px 3px inset transparent",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
