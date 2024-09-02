@@ -4,15 +4,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const __chat = (props: any) => {
   const you = props.sender === "you" ? "items-end" : "items-start"
   return (
-    <div className={`flex flex-col w-full ${you}`} >
-      {
-        props.sender === "you" ? "" : (
-          <span className="text-sm">{props.sender}</span>
-        )
-      }
-      <p className={
-        `${props.sender === "you" ? "border-2 border-solid border-lime-500" : "bg-slate-300"} rounded-md px-2 m-2`
-      }>{props.msg}</p>
+    <div className={`${props.className} flex flex-col w-full ${you}`} >
+      <fieldset className={
+        `${props.sender === "you" ? "border-lime-500" : "border-black"} border-solid border-[1px] rounded-md p-2 m-2`
+      }>
+        {
+          props.sender === "you" ? "" : (
+            <legend className="text-sm border-[1px] border-solid border-black px-2 ml-[5px] rounded-md">{props.sender}</legend>
+          )
+        }
+
+        <p>
+          {
+            (props.sender === "you" ? "" : <span>&emsp;</span>)
+          }{
+            props.children
+          }
+        </p>
+      </fieldset>
     </div >
   )
 }
@@ -32,15 +41,19 @@ const ChatBox = (props: any) => {
   const sendmsg = () => {
     const _send = document.getElementById("sendIcon")
     const _load = document.getElementById("loader")
-    const msg = document.getElementById("msg")
+    const msg = document.getElementById("msg") as HTMLInputElement
+
     if (_send && _load && msg) {
       if (msg.value.trim() === "") {
         return alert("No input message")
       }
+
       _send.style.display = "none"
       _load.style.display = "inline"
       msg.value = ""
+
       scroll()
+
       setTimeout(() => {
         _send.style.display = "block"
         _load.style.display = "none"
@@ -48,32 +61,48 @@ const ChatBox = (props: any) => {
     }
   }
 
-  scroll()
+  setTimeout(() => {
+    scroll()
+  }, 100)
+
+  const chats = [
+    {
+      "sender": "you",
+      "msg": "hello"
+    },
+    {
+      "sender": "Albert",
+      "msg": "Kamusta"
+    },
+    {
+      "sender": "Jayson",
+      "msg": "Mundo"
+    },
+    {
+      "sender": "you",
+      "msg": "ang cute ko"
+    },
+    {
+      "sender": "Marvin",
+      "msg": "Kaya nga e"
+    },
+    {
+      "sender": "Jayson",
+      "msg": "duda"
+    }
+  ]
 
   return (
     <div className={`${props.className} flex flex-col h-full w-full box-border items-center`}>
       <h3>Chatbox</h3>
       <div id="chats" className="flex flex-col h-full w-full box-border overflow-scroll">
-        <__chat sender="you" msg="test" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="you" msg="test" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="you" msg="test" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="you" msg="test" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
-        <__chat sender="ikaw" msg="test ng kabila" />
+        {
+          chats.map((e) => {
+            return (
+              <__chat sender={e.sender}>{e.msg}</__chat>
+            )
+          })
+        }
       </div>
       <div className="flex w-full box-border p-2">
         <input id="msg" className="w-full outline-none box-border bg-slate-300/50" placeholder="Enter your message" />
