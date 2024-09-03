@@ -1,6 +1,7 @@
 import { FirebaseOptions, initializeApp } from "firebase/app";
 import { addDoc, getFirestore, collection, getDocs } from "firebase/firestore";
 
+/*
 interface fbase {
   apiKey: string;
   authDomain: string;
@@ -10,7 +11,7 @@ interface fbase {
   appId: string;
   measurementID: string;
 }
-
+*/
 const projID = "sulatbaybayin-website-ts";
 
 const firebaseConfig: FirebaseOptions = {
