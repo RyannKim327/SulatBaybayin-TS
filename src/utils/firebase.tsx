@@ -10,8 +10,8 @@ const firebaseConfig = {
   measurementID: process?.env.MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
+initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 
 export default db;
