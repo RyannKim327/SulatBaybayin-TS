@@ -1,4 +1,5 @@
-import { FirebaseOptions, initializeApp } from "firebase/app";
+import { FirebaseOptions } from "firebase/app";
+import firebase from "firebase/compat/app";
 import { addDoc, getFirestore, collection, getDocs } from "firebase/firestore";
 
 const projID = "sulatbaybayin-website-ts";
@@ -13,7 +14,8 @@ const firebaseConfig: FirebaseOptions = {
   measurementId: "G-LEXEWNQ8C8",
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const authentication = firebase.auth;
 
-export { db, addDoc, collection, getDocs };
+export { app, authentication, db, addDoc, collection, getDocs };
