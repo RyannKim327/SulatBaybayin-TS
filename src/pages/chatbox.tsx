@@ -103,34 +103,7 @@ const ChatBox = (props: any) => {
   setTimeout(() => {
     scroll();
   }, 100);
-  /*
-    const chats = [
-      {
-        "sender": "you",
-        "msg": "hello"
-      },
-      {
-        "sender": "Albert",
-        "msg": "Kamusta"
-      },
-      {
-        "sender": "Jayson",
-        "msg": "Mundo"
-      },
-      {
-        "sender": "you",
-        "msg": "ang cute ko fhusa saduaiud fhfadh a"
-      },
-      {
-        "sender": "Marvin",
-        "msg": "Kaya nga e"
-      },
-      {
-        "sender": "Jayson",
-        "msg": "duda hsgdfuilgasedliugfasdspiufg asiudhf ad fuaf af af aif hasias dsdfgais ful"
-      }
-    ]
-  */
+
   return (
     <div
       className={`${props.className} flex flex-col h-full w-full box-border items-center`}
@@ -146,7 +119,7 @@ const ChatBox = (props: any) => {
       </div>
       <div className="flex w-full box-border p-2">
         <input
-          onKeyUp={(event: React.KeyboardEvent<HTMLImageElement>) =>
+          onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) =>
             myKey(event)
           }
           id="msg"
