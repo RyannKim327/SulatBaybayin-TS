@@ -5,10 +5,15 @@ const Top = (props: any) => {
     <div className={`${props.className} flex flex-col items-center`}>
       <h3 id="title">Welcome to</h3>
       <ul className="flex flex-col w-full items-start">
-        <Link to="/">Home</Link>
-        <Link to="/about">About us</Link>
-        <Link to="/download">Download the app</Link>
-        <Link to="/policy">Policy and Guidelines</Link>
+        <Link className="pl-4 w-full hover:text-slate-500" to="/">
+          Home
+        </Link>
+        <Link className="pl-4 w-full hover:text-slate-500" to="/download">
+          Download the app
+        </Link>
+        <Link className="pl-4 w-full hover:text-slate-500" to="/policies">
+          Policy and Guidelines
+        </Link>
       </ul>
     </div>
   );
