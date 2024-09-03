@@ -87,40 +87,40 @@ const ChatBox = (props: any) => {
   setTimeout(() => {
     scroll()
   }, 100)
-
-  const chats = [
-    {
-      "sender": "you",
-      "msg": "hello"
-    },
-    {
-      "sender": "Albert",
-      "msg": "Kamusta"
-    },
-    {
-      "sender": "Jayson",
-      "msg": "Mundo"
-    },
-    {
-      "sender": "you",
-      "msg": "ang cute ko fhusa saduaiud fhfadh a"
-    },
-    {
-      "sender": "Marvin",
-      "msg": "Kaya nga e"
-    },
-    {
-      "sender": "Jayson",
-      "msg": "duda hsgdfuilgasedliugfasdspiufg asiudhf ad fuaf af af aif hasias dsdfgais ful"
-    }
-  ]
-
+  /*
+    const chats = [
+      {
+        "sender": "you",
+        "msg": "hello"
+      },
+      {
+        "sender": "Albert",
+        "msg": "Kamusta"
+      },
+      {
+        "sender": "Jayson",
+        "msg": "Mundo"
+      },
+      {
+        "sender": "you",
+        "msg": "ang cute ko fhusa saduaiud fhfadh a"
+      },
+      {
+        "sender": "Marvin",
+        "msg": "Kaya nga e"
+      },
+      {
+        "sender": "Jayson",
+        "msg": "duda hsgdfuilgasedliugfasdspiufg asiudhf ad fuaf af af aif hasias dsdfgais ful"
+      }
+    ]
+  */
   return (
     <div className={`${props.className} flex flex-col h-full w-full box-border items-center`}>
       <h3>Chatbox</h3>
       <div id="chats" className="flex flex-col h-full w-full box-border overflow-scroll">
         {
-          data.map((e, i) => {
+          data.map((e) => {
             return (
               <__chat sender={e['sender']}>{e['msg']}</__chat>
             )
