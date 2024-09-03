@@ -1,5 +1,4 @@
 import { FirebaseOptions, initializeApp } from "firebase/app";
-import firebase from "firebase/compat/app";
 import { addDoc, getFirestore, collection, getDocs } from "firebase/firestore";
 
 interface fbase {
