@@ -1,6 +1,6 @@
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { db, addDoc, collection, getDocs } from "../utils/firebase";
 
 interface fbitem {
@@ -35,7 +35,7 @@ const __chat = (props: any) => {
 const ChatBox = (props: any) => {
   const [data, setData] = useState<fbitem[]>([]);
 
-  useEffect(() => {
+  setTimeout(() => {
     const fetchdata = async () => {
       try {
         const snap = await getDocs(collection(db, "chats"));
@@ -43,11 +43,11 @@ const ChatBox = (props: any) => {
 
         setData(items);
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     };
     fetchdata();
-  }, []);
+  }, 100);
 
   const scroll = () => {
     const _chat = document.getElementById("chats");
@@ -72,7 +72,6 @@ const ChatBox = (props: any) => {
 
       _send.style.display = "none";
       _load.style.display = "inline";
-      msg.value = "";
 
       const __send = async () => {
         const senddata: fbitem = {
@@ -84,12 +83,20 @@ const ChatBox = (props: any) => {
 
       __send();
 
+      msg.value = "";
       scroll();
 
       setTimeout(() => {
         _send.style.display = "block";
         _load.style.display = "none";
       }, 1500);
+    }
+  };
+
+  const myKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      sendmsg();
     }
   };
 
@@ -139,6 +146,9 @@ const ChatBox = (props: any) => {
       </div>
       <div className="flex w-full box-border p-2">
         <input
+          onKeyUp={(event: React.KeyboardEvent<HTMLImageElement>) =>
+            myKey(event)
+          }
           id="msg"
           className="w-full outline-none box-border bg-slate-300/50"
           placeholder="Enter your message"
